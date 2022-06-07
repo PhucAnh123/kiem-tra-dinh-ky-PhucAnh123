@@ -1,8 +1,13 @@
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.event.ActionEvent;
+
+import java.io.IOException;
+
 public class Shop {
 
     @FXML
@@ -63,12 +68,14 @@ public class Shop {
     private Button checkout;
 
     @FXML
-    void onField(ActionEvent event) {
-
+    void onField(ActionEvent event)  throws IOException{
+        Scene scene=ShopDemo.getMainScenne();
+        scene.setRoot(new FXMLLoader(getClass().getResource("bill.fxml")).load());
     }
 
     @FXML
-    void onPress(ActionEvent event) {
+    void onPress(ActionEvent event)  {
+
 
     }
 

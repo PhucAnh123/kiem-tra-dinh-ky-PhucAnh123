@@ -1,9 +1,12 @@
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class Login {
 
@@ -23,10 +26,18 @@ public class Login {
     private Button button;
 
     @FXML
-    void onPress(ActionEvent event) {
-
+    void onPress(ActionEvent event) throws IOException {
+        Scene scene=LoginDemo.getMainScenne();
+        scene.setRoot(new FXMLLoader(getClass().getResource("coffee.fxml")).load())
+        ;
+        String name=fin1.getText();
+        String password=fin2.getText();
+        if(password.equals("abc123"))  {
+            button.setText("Hello" +name+"Welcome to Tutorialspoint");
+        } else {
+            button.setText("Wrong passworf try again");
+        }
 
     }
 
 }
-
